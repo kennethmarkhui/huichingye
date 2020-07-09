@@ -10,6 +10,9 @@ const styles = ({ typography }) => ({
   container: {
     padding: `${typography.pxToRem(32)} 0`,
   },
+  description: {
+    lineHeight: '1.5',
+  },
   imgWrapper: {
     width: '100%',
     maxWidth: '100%',
@@ -54,7 +57,11 @@ const About = ({ classes }) => {
         <Grid container spacing={3}>
           <Grid item md={8}>
             {description.map((p, i) => (
-              <Typography key={i} variant='body1' paragraph>
+              <Typography
+                key={i}
+                variant='body1'
+                className={classes.description}
+                paragraph>
                 {p}
               </Typography>
             ))}
