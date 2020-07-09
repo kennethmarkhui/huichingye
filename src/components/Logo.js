@@ -2,11 +2,11 @@ import React from 'react';
 import logoIcon from 'images/website-icon.png';
 import { withStyles } from '@material-ui/styles';
 
-const styles = ({ typography }) => ({
+const styles = ({ typography, palette }) => ({
   container: {
     borderRadius: '10%',
     overflow: 'hidden',
-    border: `${typography.pxToRem(2)} solid white`,
+    border: `${typography.pxToRem(2)} solid ${palette.background.default}`,
     boxShadow: `0 0 0 ${typography.pxToRem(2)} rgba(0,0,0,.1)`,
     height: typography.pxToRem(36),
     width: typography.pxToRem(36),

@@ -19,6 +19,9 @@ const styles = ({ palette, typography }) => ({
     minHeight: '100%',
     padding: `${typography.pxToRem(16)} ${typography.pxToRem(48)}`,
   },
+  dialogPaper: {
+    backgroundColor: palette.background.default,
+  },
   navLink: {
     border: 'none',
     display: 'inline-block',
@@ -34,7 +37,10 @@ const styles = ({ palette, typography }) => ({
 const MobileNavigation = ({ classes, options, setOpen, open }) => (
   <React.Fragment>
     <FaBars className={classes.menuIcon} onClick={() => setOpen(!open)} />
-    <Dialog open={open} fullScreen>
+    <Dialog
+      open={open}
+      fullScreen
+      PaperProps={{ classes: { root: classes.dialogPaper } }}>
       <DialogContent className={classes.menuContainer}>
         {options.map((link, i) => (
           <Grow
