@@ -1,3 +1,7 @@
 {
-  "description": ["en placeholder", "en placeholder", "en placeholder"]
+  "description": [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi mi, ultricies a tristique at, dapibus in leo. Vivamus dictum dapibus dolor, a commodo neque. Integer a sodales felis. Duis auctor vel quam nec convallis.",
+    "Vestibulum pretium, nibh ut ultricies dignissim, velit erat porta eros, sit amet tempor tortor ex in nisi. In hac habitasse platea dictumst. ",
+    "Nam urna sapien, aliquam in sollicitudin ac, congue eu elit. Duis faucibus posuere nulla, sed sodales ante gravida nec."
+  ]
 }

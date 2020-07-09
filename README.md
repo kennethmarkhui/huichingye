@@ -1,6 +1,3 @@
-<p align="center">
-  <img alt="Image" src="https://raw.githubusercontent.com/kennethmarkhui/huichingye/master/src/images/website-icon.png?token=AJ4CWHKO7HHYBBUDGZ7MC2K7A4J3S" width="60" />
-</p>
 <h1 align="center">
   Hui, Ching-ye
 </h1>
