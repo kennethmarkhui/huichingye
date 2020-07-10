@@ -4,9 +4,16 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Hui, Ching-ye`,
-    description: `Hui, Ching-ye Website`,
-    author: '@kennethmarkhui',
+    en: {
+      title: `Hui, Ching-ye`,
+      description: `Hui, Ching-ye Website`,
+      author: '@kennethmarkhui',
+    },
+    zh: {
+      title: `許晴野`,
+      description: `許晴野 網站`,
+      author: '@許尚鈞',
+    },
   },
   plugins: [
     `gatsby-plugin-flow`,
@@ -62,7 +69,7 @@ module.exports = {
       resolve: `gatsby-theme-localization`,
       options: {
         languages: ['en', 'zh'],
-        namespaces: ['header', 'home', 'about'],
+        namespaces: ['translation'],
         localesDir: './src/locales',
         allowIndex: false,
         defaultLng: 'en',
@@ -71,7 +78,6 @@ module.exports = {
           fallbackLng: 'en',
           debug: process.env.NODE_ENV !== 'production',
           preload: ['en', 'zh'],
-          defaultNS: ['header'],
         },
         i18nPlugin: {
           // whatever you want to pass to gatsby-plugin-i18n

@@ -8,7 +8,7 @@ import Animated from 'components/animated/Animated';
 import LinkList from 'components/LinkList';
 
 const Home = () => {
-  const { t, ready } = useTranslation('home');
+  const { t, ready } = useTranslation();
   const content = {
     title: t('title'),
     links: [

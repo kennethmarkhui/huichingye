@@ -25,7 +25,7 @@ const styles = ({ typography }) => ({
 });
 
 const About = ({ classes }) => {
-  const { t, ready } = useTranslation('about');
+  const { t, ready } = useTranslation();
 
   // {
   //   "p1": "Born in an elite family in China in 1933, he was deeply influenced by his family and started picking up different forms of art like calligraphy, stamp carving and print-making in his childhood. He came to Hong Kong in the 1950s. He is a self-learner, and his interest cover a wide range of art, both east and west.",

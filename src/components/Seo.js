@@ -8,9 +8,14 @@ const useSiteMetadata = () => {
       query {
         site {
           siteMetadata {
-            title
-            description
-            author
+            en {
+              title
+              description
+            }
+            zh {
+              title
+              description
+            }
           }
         }
       }
@@ -22,7 +27,7 @@ const useSiteMetadata = () => {
 function SEO({ description, lang, meta, title }) {
   const siteMetadata = useSiteMetadata();
 
-  const metaDescription = description || siteMetadata.description;
+  const metaDescription = description || siteMetadata[lang].description;
 
   return (
     <Helmet
@@ -30,7 +35,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${siteMetadata.title}`}
+      titleTemplate={`%s | ${siteMetadata[lang].title}`}
       meta={[
         {
           name: `description`,

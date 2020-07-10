@@ -29,11 +29,11 @@ const styles = ({ app, typography, palette }) => ({
 });
 
 const Header = ({ classes }) => {
-  const { t, ready } = useTranslation('header');
+  const { t, ready } = useTranslation();
 
   const options = [
-    { to: '/', text: t('home'), namespace: ['home'] },
-    { to: '/about/', text: t('about'), namespace: ['about'] },
+    { to: '/', text: t('home') },
+    { to: '/about/', text: t('about') },
   ];
 
   return (

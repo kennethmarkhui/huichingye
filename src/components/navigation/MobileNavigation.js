@@ -55,8 +55,7 @@ const MobileNavigation = ({ classes, options, setOpen, open }) => (
               className={classes.navLink}
               activeClassName={classes.navLinkActive}
               exact={'true'}
-              onClick={() => setOpen(!open)}
-              preloadNamespaces={link.namepsace}>
+              onClick={() => setOpen(!open)}>
               {link.text}
             </Typography>
           </Grow>

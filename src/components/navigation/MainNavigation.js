@@ -27,8 +27,7 @@ const MainNavigation = ({ classes, options }) => (
           to={link.to}
           className={classes.navLink}
           activeClassName={classes.navLinkActive}
-          exact={'true'}
-          preloadNamespaces={link.namepsace}>
+          exact={'true'}>
           <span>{link.text}</span>
         </Link>
       </li>
