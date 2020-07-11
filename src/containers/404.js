@@ -1,12 +1,19 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import Fade from '@material-ui/core/Fade';
+import Box from '@material-ui/core/Box';
 
 const NotFound = ({ message }) => (
-  <Fade in timeout={1000}>
-    <Typography variant='h2' color='textPrimary'>
+  <Typography color='textPrimary' align='center'>
+    <Box
+      fontWeight='fontWeightBold'
+      fontSize='h4.fontSize'
+      lineHeight={2}
+      m={1}>
+      404
+    </Box>
+    <Box fontSize='h4.fontSize' lineHeight={2} m={1}>
       {message}
-    </Typography>
-  </Fade>
+    </Box>
+  </Typography>
 );
 export default NotFound;
