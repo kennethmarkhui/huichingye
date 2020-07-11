@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import { IntlContextConsumer, changeLocale } from 'gatsby-plugin-intl';
 import { withStyles } from '@material-ui/styles';
 import withWidth from '@material-ui/core/withWidth';
-import Button from '@material-ui/core/Button';
-import { MdTranslate } from 'react-icons/md';
 
 import { compose, isMobileView } from 'utils';
 
+import LanguageToggler from '../Language';
 import MainNavigation from './MainNavigation';
 import MobileNavigation from './MobileNavigation';
 
-const styles = ({ palette, typography }) => ({
+const styles = () => ({
   container: {
     display: 'flex',
     flexDirection: 'row',
@@ -22,11 +20,6 @@ const styles = ({ palette, typography }) => ({
     position: 'relative',
     zIndex: 10,
   },
-  langToggle: {
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
-  },
 });
 
 const Navigation = ({ classes, width, options }) => {
@@ -34,19 +27,7 @@ const Navigation = ({ classes, width, options }) => {
 
   return (
     <div className={classes.container}>
-      <IntlContextConsumer>
-        {({ language }) => {
-          return (
-            <Button
-              disableRipple
-              className={classes.langToggle}
-              onClick={() => changeLocale(language === 'en' ? 'zh' : 'en')}
-              startIcon={<MdTranslate />}>
-              {language}
-            </Button>
-          );
-        }}
-      </IntlContextConsumer>
+      <LanguageToggler />
       {isMobileView(width) ? (
         <MobileNavigation options={options} open={open} setOpen={setOpen} />
       ) : (
