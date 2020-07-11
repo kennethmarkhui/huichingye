@@ -36,18 +36,16 @@ const Header = ({ classes }) => {
 
   return (
     <header className={classes.container}>
-      {ready && (
-        <React.Fragment>
-          <Link to='/' className={classes.logo}>
-            <Animated>
-              <Logo />
-            </Animated>
-          </Link>
-          <div className={classes.navigation}>
-            <Navigation options={options} />
-          </div>
-        </React.Fragment>
-      )}
+      <React.Fragment>
+        <Link to='/' className={classes.logo}>
+          <Animated>
+            <Logo />
+          </Animated>
+        </Link>
+        <div className={classes.navigation}>
+          <Navigation options={options} />
+        </div>
+      </React.Fragment>
     </header>
   );
 };

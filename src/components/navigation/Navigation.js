@@ -30,7 +30,6 @@ const styles = ({ palette, typography }) => ({
 });
 
 const Navigation = ({ classes, width, options }) => {
-  const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
 
   return (

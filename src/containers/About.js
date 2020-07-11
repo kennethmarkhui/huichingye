@@ -38,28 +38,26 @@ const About = ({ classes, description }) => {
 
   return (
     <div className={classes.container}>
-      {ready && (
-        <Grid container spacing={3}>
-          <Grid item md={8}>
-            {description.map((p, i) => (
-              <Typography
-                key={i}
-                variant='body1'
-                className={classes.description}
-                paragraph>
-                {p}
-              </Typography>
-            ))}
-          </Grid>
-          <Grid item md={4} className={classes.imgWrapper}>
-            <Image
-              fluid={data.image.childImageSharp.fluid}
-              alt='about'
-              className={classes.img}
-            />
-          </Grid>
+      <Grid container spacing={3}>
+        <Grid item md={8}>
+          {description.map((p, i) => (
+            <Typography
+              key={i}
+              variant='body1'
+              className={classes.description}
+              paragraph>
+              {p}
+            </Typography>
+          ))}
         </Grid>
-      )}
+        <Grid item md={4} className={classes.imgWrapper}>
+          <Image
+            fluid={data.image.childImageSharp.fluid}
+            alt='about'
+            className={classes.img}
+          />
+        </Grid>
+      </Grid>
     </div>
   );
 };

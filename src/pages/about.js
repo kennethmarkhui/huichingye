@@ -26,7 +26,7 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <SEO title={intl.formatMessage({ id: 'about' })} />
+      <SEO title={intl.formatMessage({ id: 'about' })} lang={intl.locale} />
       <About description={description} />
     </Layout>
   );
