@@ -5,7 +5,6 @@ import Fade from '@material-ui/core/Fade';
 const content = {
   message: 'Page Not Found.',
 };
-
 const { message } = content;
 
 const NotFound = () => {

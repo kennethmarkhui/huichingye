@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby-theme-localization';
-import { useTranslation } from 'react-i18next';
+import { Link } from 'gatsby';
 import { withStyles } from '@material-ui/styles';
 
 import Animated from './animated/Animated';
@@ -29,27 +28,23 @@ const styles = ({ app, typography, palette }) => ({
 });
 
 const Header = ({ classes }) => {
-  const { t, ready } = useTranslation();
-
   const options = [
-    { to: '/', text: t('home') },
-    { to: '/about/', text: t('about') },
+    { to: '/', text: 'home' },
+    { to: '/about/', text: 'about' },
   ];
 
   return (
     <header className={classes.container}>
-      {ready && (
-        <React.Fragment>
-          <Link to='/' className={classes.logo}>
-            <Animated>
-              <Logo />
-            </Animated>
-          </Link>
-          <div className={classes.navigation}>
-            <Navigation options={options} />
-          </div>
-        </React.Fragment>
-      )}
+      <React.Fragment>
+        <Link to='/' className={classes.logo}>
+          <Animated>
+            <Logo />
+          </Animated>
+        </Link>
+        <div className={classes.navigation}>
+          <Navigation options={options} />
+        </div>
+      </React.Fragment>
     </header>
   );
 };

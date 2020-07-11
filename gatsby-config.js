@@ -65,26 +65,5 @@ module.exports = {
         icon: `src/images/favicon.png`,
       },
     },
-    {
-      resolve: `gatsby-theme-localization`,
-      options: {
-        languages: ['en', 'zh'],
-        namespaces: ['translation'],
-        localesDir: './src/locales',
-        allowIndex: false,
-        defaultLng: 'en',
-        i18next: {
-          // whatever you want to pass to react-i18next
-          fallbackLng: 'en',
-          debug: process.env.NODE_ENV !== 'production',
-          preload: ['en', 'zh'],
-        },
-        i18nPlugin: {
-          // whatever you want to pass to gatsby-plugin-i18n
-          langKeyDefault: 'en',
-          useLangKeyLayout: false,
-        },
-      },
-    },
   ],
 };
