@@ -6,7 +6,7 @@ import Layout from 'components/Layout';
 import Home from 'containers/Home';
 
 const IndexPage = () => {
-  const { i18n, t } = useTranslation('translation');
+  const { i18n, t } = useTranslation();
   return (
     <Layout>
       <SEO title={t('home')} lang={i18n.language} />

@@ -6,7 +6,7 @@ import Layout from 'components/Layout';
 import About from 'containers/About';
 
 const AboutPage = () => {
-  const { i18n, t } = useTranslation('translation');
+  const { i18n, t } = useTranslation();
   return (
     <Layout>
       <SEO title={t('about')} lang={i18n.language} />
