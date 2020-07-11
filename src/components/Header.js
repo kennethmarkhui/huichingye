@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { useIntl, Link } from 'gatsby-plugin-intl';
 import { withStyles } from '@material-ui/styles';
 
 import Animated from './animated/Animated';
@@ -28,9 +28,10 @@ const styles = ({ app, typography, palette }) => ({
 });
 
 const Header = ({ classes }) => {
+  const intl = useIntl();
   const options = [
-    { to: '/', text: 'home' },
-    { to: '/about/', text: 'about' },
+    { to: '/', text: intl.formatMessage({ id: 'home' }) },
+    { to: '/about/', text: intl.formatMessage({ id: 'about' }) },
   ];
 
   return (
