@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby-theme-localization';
-import { useTranslation } from 'react-i18next';
+import { useIntl, Link } from 'gatsby-plugin-intl';
 import { withStyles } from '@material-ui/styles';
 
 import Animated from './animated/Animated';
@@ -29,11 +28,10 @@ const styles = ({ app, typography, palette }) => ({
 });
 
 const Header = ({ classes }) => {
-  const { t, ready } = useTranslation();
-
+  const intl = useIntl();
   const options = [
-    { to: '/', text: t('home') },
-    { to: '/about/', text: t('about') },
+    { to: '/', text: intl.formatMessage({ id: 'home' }) },
+    { to: '/about/', text: intl.formatMessage({ id: 'about' }) },
   ];
 
   return (

@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from 'gatsby-image';
-import { useTranslation } from 'react-i18next';
 import { withStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -24,21 +23,7 @@ const styles = ({ typography }) => ({
   },
 });
 
-const About = ({ classes }) => {
-  const { t, ready } = useTranslation();
-
-  // {
-  //   "p1": "Born in an elite family in China in 1933, he was deeply influenced by his family and started picking up different forms of art like calligraphy, stamp carving and print-making in his childhood. He came to Hong Kong in the 1950s. He is a self-learner, and his interest cover a wide range of art, both east and west.",
-  //   "p2": "His exlibris are rustic and folklore-like, often making use of multi-plate skill to achieve his multi-color prints. His works are highly complimented by art critics of Taiwan, China and Hong Kong. His exlibris have been catalogued in various museums, two of his exlibris were used in the historical events in the memorial album of the late Deng Siu Ping, and the return of sovereignty of Hong Kong to China, both in 1997.",
-  //   "p3": "He serves as honorary committee member or advisor to many art institutions and organizations, including the Korean Stamp Carving Society and the Hong Kong Exlibris Association."
-  // }
-
-  const content = {
-    description: t('description', { returnObjects: true }),
-  };
-
-  const { description } = content;
-
+const About = ({ classes, description }) => {
   const data = useStaticQuery(graphql`
     query {
       image: file(relativePath: { eq: "cat.jpg" }) {

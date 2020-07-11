@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { IntlContextConsumer, changeLocale } from 'gatsby-plugin-intl';
 import { withStyles } from '@material-ui/styles';
 import withWidth from '@material-ui/core/withWidth';
 import Button from '@material-ui/core/Button';
@@ -35,15 +35,19 @@ const Navigation = ({ classes, width, options }) => {
 
   return (
     <div className={classes.container}>
-      <Button
-        disableRipple
-        className={classes.langToggle}
-        onClick={() =>
-          i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en')
-        }
-        startIcon={<MdTranslate />}>
-        {i18n.language}
-      </Button>
+      <IntlContextConsumer>
+        {({ language }) => {
+          return (
+            <Button
+              disableRipple
+              className={classes.langToggle}
+              onClick={() => changeLocale(language === 'en' ? 'zh' : 'en')}
+              startIcon={<MdTranslate />}>
+              {language}
+            </Button>
+          );
+        }}
+      </IntlContextConsumer>
       {isMobileView(width) ? (
         <MobileNavigation options={options} open={open} setOpen={setOpen} />
       ) : (
