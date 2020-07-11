@@ -40,15 +40,9 @@ const About = ({ classes, description }) => {
     <div className={classes.container}>
       <Grid container spacing={3}>
         <Grid item md={8}>
-          {description.map((p, i) => (
-            <Typography
-              key={i}
-              variant='body1'
-              className={classes.description}
-              paragraph>
-              {p}
-            </Typography>
-          ))}
+          <Typography variant='body1' className={classes.description} paragraph>
+            {description}
+          </Typography>
         </Grid>
         <Grid item md={4} className={classes.imgWrapper}>
           <Image

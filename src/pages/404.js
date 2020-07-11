@@ -8,13 +8,13 @@ import NotFound from 'containers/404';
 const NotFoundPage = () => {
   const intl = useIntl();
   const content = {
-    message: intl.formatMessage({ id: 'notfound.message' }),
+    message: intl.formatMessage({ id: 'notfoundPage.message' }),
   };
   const { message } = content;
 
   return (
     <Layout>
-      <SEO title={`404: ${intl.formatMessage({ id: 'notfound.header' })}`} />
+      <SEO title={`404: ${intl.formatMessage({ id: 'notfoundPage.name' })}`} />
       <NotFound message={message} />
     </Layout>
   );

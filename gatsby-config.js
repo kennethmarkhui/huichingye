@@ -5,8 +5,8 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     en: {
-      title: `Hui, Ching-ye`,
-      description: `Hui, Ching-ye Website`,
+      title: `Hui Ching-ye`,
+      description: `Hui Ching-ye Website`,
       author: '@kennethmarkhui',
     },
     zh: {
