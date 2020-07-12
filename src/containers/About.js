@@ -11,6 +11,7 @@ const styles = ({ typography }) => ({
   },
   description: {
     lineHeight: '1.5',
+    whiteSpace: 'pre-line',
   },
   imgWrapper: {
     width: '100%',
