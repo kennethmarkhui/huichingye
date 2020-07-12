@@ -7,17 +7,16 @@ import About from 'containers/About';
 
 const AboutPage = () => {
   const intl = useIntl();
-  // console.log(intl.messages);
 
   const content = {
-    description: intl.formatMessage({ id: 'aboutPage.description' }),
+    description: intl.formatMessage({ id: 'about_page.description' }),
   };
   const { description } = content;
 
   return (
     <Layout>
       <SEO
-        title={intl.formatMessage({ id: 'aboutPage.name' })}
+        title={intl.formatMessage({ id: 'about_page.name' })}
         lang={intl.locale}
       />
       <About description={description} />

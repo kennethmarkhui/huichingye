@@ -38,22 +38,20 @@ const About = ({ classes, description }) => {
   `);
 
   return (
-    <div className={classes.container}>
-      <Grid container spacing={3}>
-        <Grid item md={8}>
-          <Typography variant='body1' className={classes.description} paragraph>
-            {description}
-          </Typography>
-        </Grid>
-        <Grid item md={4} className={classes.imgWrapper}>
-          <Image
-            fluid={data.image.childImageSharp.fluid}
-            alt='about'
-            className={classes.img}
-          />
-        </Grid>
+    <Grid container justify='space-between' className={classes.container}>
+      <Grid item md={8}>
+        <Typography variant='body1' className={classes.description} paragraph>
+          {description}
+        </Typography>
       </Grid>
-    </div>
+      <Grid item md={4} className={classes.imgWrapper}>
+        <Image
+          fluid={data.image.childImageSharp.fluid}
+          alt='about'
+          className={classes.img}
+        />
+      </Grid>
+    </Grid>
   );
 };
 
