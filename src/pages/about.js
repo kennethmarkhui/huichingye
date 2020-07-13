@@ -13,6 +13,9 @@ const AboutPage = () => {
       <SEO
         title={intl.formatMessage({ id: 'about_page.name' })}
         lang={intl.locale}
+        description={intl.formatMessage({
+          id: 'about_page.seo_description',
+        })}
       />
       <About intl={intl} />
     </Layout>

@@ -13,6 +13,9 @@ const IndexPage = () => {
       <SEO
         title={intl.formatMessage({ id: 'home_page.name' })}
         lang={intl.locale}
+        description={intl.formatMessage({
+          id: 'home_page.seo_description',
+        })}
       />
       <Home intl={intl} />
     </Layout>

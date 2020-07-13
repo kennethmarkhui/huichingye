@@ -13,6 +13,9 @@ const NotFoundPage = () => {
       <SEO
         title={`404: ${intl.formatMessage({ id: 'notfound_page.name' })}`}
         lang={intl.locale}
+        description={intl.formatMessage({
+          id: 'notfound_page.seo_description',
+        })}
       />
       <NotFound intl={intl} />
     </Layout>
