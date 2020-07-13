@@ -58,11 +58,22 @@ module.exports = {
       options: {
         name: `Hui, Ching-ye`,
         short_name: `huichingye`,
+        description: `Hui Ching-ye Website`,
+        lang: `en`,
+        display: `standalone`,
+        icon: `src/images/favicon.png`,
         start_url: `/`,
         background_color: `black`,
         theme_color: `black`,
-        display: `minimal-ui`,
-        icon: `src/images/favicon.png`,
+        localize: [
+          {
+            start_url: `/zh/`,
+            lang: `zh`,
+            name: `許晴野`,
+            short_name: `許晴野`,
+            description: `許晴野 網站`,
+          },
+        ],
       },
     },
     {
