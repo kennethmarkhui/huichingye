@@ -7,10 +7,6 @@ import NotFound from 'containers/404';
 
 const NotFoundPage = () => {
   const intl = useIntl();
-  const content = {
-    message: intl.formatMessage({ id: 'notfound_page.message' }),
-  };
-  const { message } = content;
 
   return (
     <Layout>
@@ -18,7 +14,7 @@ const NotFoundPage = () => {
         title={`404: ${intl.formatMessage({ id: 'notfound_page.name' })}`}
         lang={intl.locale}
       />
-      <NotFound message={message} />
+      <NotFound intl={intl} />
     </Layout>
   );
 };

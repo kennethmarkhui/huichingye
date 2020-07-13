@@ -24,7 +24,7 @@ const styles = ({ typography }) => ({
   },
 });
 
-const About = ({ classes, description }) => {
+const About = ({ classes, intl }) => {
   const data = useStaticQuery(graphql`
     query {
       image: file(relativePath: { eq: "cat.jpg" }) {
@@ -36,6 +36,10 @@ const About = ({ classes, description }) => {
       }
     }
   `);
+  const content = {
+    description: intl.formatMessage({ id: 'about_page.description' }),
+  };
+  const { description } = content;
 
   return (
     <Grid container justify='space-between' className={classes.container}>
