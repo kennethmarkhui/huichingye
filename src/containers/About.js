@@ -27,7 +27,7 @@ const styles = ({ typography }) => ({
 const About = ({ classes, intl }) => {
   const data = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "cat.jpg" }) {
+      image: file(relativePath: { eq: "main.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid

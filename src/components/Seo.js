@@ -3,26 +3,29 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 
-function SEO({ description, lang, meta, title, path }) {
-  const { site } = useStaticQuery(
+function SEO({ lang, meta, title, description, path, image }) {
+  const intl = useIntl();
+
+  const { file } = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
-            siteUrl
+        file(relativePath: { eq: "main.jpg" }) {
+          childImageSharp {
+            fixed {
+              src
+            }
           }
         }
       }
     `
   );
 
-  const intl = useIntl();
-
   const metaDescription =
     description ||
     intl.formatMessage({
       id: 'siteMetadata.description',
     });
+  const metaImage = image || file.childImageSharp.fixed.src;
 
   return (
     <Helmet
@@ -30,13 +33,28 @@ function SEO({ description, lang, meta, title, path }) {
         lang,
       }}
       title={title}
+      defaultTitle={intl.formatMessage({
+        id: 'siteMetadata.title',
+      })}
       titleTemplate={`%s | ${intl.formatMessage({
         id: 'siteMetadata.title',
       })}`}
       meta={[
         {
+          name: `title`,
+          content: title,
+        },
+        {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          property: `og:url`,
+          content: `${process.env.SITE_URL}${path}`,
         },
         {
           property: `og:title`,
@@ -47,15 +65,31 @@ function SEO({ description, lang, meta, title, path }) {
           content: metaDescription,
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: `og:image`,
+          content: `${process.env.SITE_URL}${metaImage}`,
         },
         {
-          property: `og:url`,
-          content: `${site.siteMetadata.siteUrl}${path}`,
+          property: `twitter:card`,
+          content: `summary_large_image`,
+        },
+        {
+          property: `twitter:url`,
+          content: `${process.env.SITE_URL}${path}`,
+        },
+        {
+          property: `twitter:title`,
+          content: title,
+        },
+        {
+          property: `twitter:description`,
+          content: metaDescription,
+        },
+        {
+          property: `twitter:image`,
+          content: `${process.env.SITE_URL}${metaImage}`,
         },
       ].concat(meta)}
-      link={[{ rel: 'canonical', href: `${site.siteMetadata.siteUrl}${path}` }]}
+      link={[{ rel: 'canonical', href: `${process.env.SITE_URL}${path}` }]}
     />
   );
 }
@@ -65,6 +99,7 @@ SEO.defaultProps = {
   meta: [],
   description: ``,
   path: `/`,
+  image: ``,
 };
 
 export default SEO;
