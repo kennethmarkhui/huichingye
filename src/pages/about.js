@@ -14,7 +14,7 @@ const AboutPage = () => {
         title={intl.formatMessage({ id: 'pages.about.seo.title' })}
         lang={intl.locale}
         description={intl.formatMessage({
-          id: 'pages.notfound.seo.description',
+          id: 'pages.about.seo.description',
         })}
       />
       <About intl={intl} />
