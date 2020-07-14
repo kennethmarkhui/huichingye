@@ -3,6 +3,9 @@ require('dotenv').config({
 });
 
 module.exports = {
+  siteMetadata: {
+    siteUrl: `https://huichingye.netlify.app`,
+  },
   plugins: [
     `gatsby-plugin-flow`,
     `gatsby-transformer-sharp`,

@@ -5,7 +5,7 @@ import SEO from 'components/Seo';
 import Layout from 'components/Layout';
 import Home from 'containers/Home';
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   const intl = useIntl();
 
   return (
@@ -16,6 +16,7 @@ const IndexPage = () => {
         description={intl.formatMessage({
           id: 'pages.home.seo.description',
         })}
+        path={location.pathname}
       />
       <Home intl={intl} />
     </Layout>
