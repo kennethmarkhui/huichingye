@@ -30,8 +30,11 @@ const styles = ({ app, typography, palette }) => ({
 const Header = ({ classes }) => {
   const intl = useIntl();
   const options = [
-    { to: '/', text: intl.formatMessage({ id: 'home_page.name' }) },
-    { to: '/about/', text: intl.formatMessage({ id: 'about_page.name' }) },
+    { to: '/', text: intl.formatMessage({ id: 'pages.home.seo.title' }) },
+    {
+      to: '/about/',
+      text: intl.formatMessage({ id: 'pages.about.seo.title' }),
+    },
   ];
 
   return (

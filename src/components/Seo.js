@@ -1,33 +1,15 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
-
-const useSiteMetadata = () => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            en {
-              title
-              description
-            }
-            zh {
-              title
-              description
-            }
-          }
-        }
-      }
-    `
-  );
-  return site.siteMetadata;
-};
+import { useIntl } from 'gatsby-plugin-intl';
 
 function SEO({ description, lang, meta, title }) {
-  const siteMetadata = useSiteMetadata();
+  const intl = useIntl();
 
-  const metaDescription = description || siteMetadata[lang].description;
+  const metaDescription =
+    description ||
+    intl.formatMessage({
+      id: 'siteMetadata.description',
+    });
 
   return (
     <Helmet
@@ -35,7 +17,9 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${siteMetadata[lang].title}`}
+      titleTemplate={`%s | ${intl.formatMessage({
+        id: 'siteMetadata.title',
+      })}`}
       meta={[
         {
           name: `description`,

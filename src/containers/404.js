@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box';
 
 const NotFound = ({ intl }) => {
   const content = {
-    message: intl.formatMessage({ id: 'notfound_page.message' }),
+    message: intl.formatMessage({ id: 'pages.notfound.content.message' }),
   };
   const { message } = content;
 

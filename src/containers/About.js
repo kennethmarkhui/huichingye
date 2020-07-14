@@ -37,12 +37,16 @@ const About = ({ classes, intl }) => {
     }
   `);
   const content = {
-    description: intl.formatMessage({ id: 'about_page.description' }),
+    description: intl.formatMessage({ id: 'pages.about.content.description' }),
   };
   const { description } = content;
 
   return (
-    <Grid container justify='space-between' className={classes.container}>
+    <Grid
+      container
+      justify='space-between'
+      spacing={2}
+      className={classes.container}>
       <Grid item md={8}>
         <Typography variant='body1' className={classes.description} paragraph>
           {description}

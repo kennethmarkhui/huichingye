@@ -3,18 +3,6 @@ require('dotenv').config({
 });
 
 module.exports = {
-  siteMetadata: {
-    en: {
-      title: `Hui Ching-ye`,
-      description: `Hui Ching-ye Website`,
-      author: '@kennethmarkhui',
-    },
-    zh: {
-      title: `許晴野`,
-      description: `許晴野 網站`,
-      author: '@許尚鈞',
-    },
-  },
   plugins: [
     `gatsby-plugin-flow`,
     `gatsby-transformer-sharp`,

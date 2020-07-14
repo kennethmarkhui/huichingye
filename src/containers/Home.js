@@ -8,12 +8,12 @@ import LinkList from 'components/LinkList';
 
 const Home = ({ intl }) => {
   const content = {
-    title: intl.formatMessage({ id: 'home_page.title' }),
+    title: intl.formatMessage({ id: 'pages.home.content.title' }),
     links: [
       {
         to:
           'https://drive.google.com/drive/folders/1B4ouIFUFbO90thXUCphrC50twoMb81Mi?usp=sharing',
-        text: intl.formatMessage({ id: 'home_page.links' }),
+        text: intl.formatMessage({ id: 'pages.home.content.links' }),
         Icon: FaRegImages,
         newTab: true,
       },
