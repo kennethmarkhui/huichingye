@@ -4,6 +4,7 @@
   "description": "Gatsby site using chronisp/gatsby-starter as starter",
   "version": "1.2.0",
   "author": "Kenneth Hui",
+  "homepage": "https://huichingye.netlify.app",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/styles": "^4.7.1",
@@ -39,6 +40,7 @@
   "keywords": [
     "gatsby"
   ],
+  "license": "MIT",
   "scripts": {
     "clean": "rm -rf node_modules",
     "build": "gatsby build",
@@ -46,5 +48,9 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "serve": "gatsby serve",
     "setup": "node ./bin/setup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kennethmarkhui/huichingye"
   }
 }

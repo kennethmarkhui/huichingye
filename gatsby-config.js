@@ -46,7 +46,7 @@ module.exports = {
       options: {
         name: `Hui, Ching-ye`,
         short_name: `huichingye`,
-        description: `Hui Ching-ye Website`,
+        description: `Hui Ching-ye was an artist who specialized in calligraphy, stamp carving and print-making.`,
         lang: `en`,
         display: `standalone`,
         icon: `src/images/favicon.png`,
@@ -59,7 +59,7 @@ module.exports = {
             lang: `zh`,
             name: `許晴野`,
             short_name: `許晴野`,
-            description: `許晴野 網站`,
+            description: `許晴野是一位專門研究書法，郵票雕刻和版畫的藝術家。`,
           },
         ],
       },
