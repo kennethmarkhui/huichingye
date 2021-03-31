@@ -2,7 +2,7 @@ import React from 'react';
 import { IntlContextConsumer, changeLocale } from 'gatsby-plugin-intl';
 import { withStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
-import { MdTranslate } from 'react-icons/md';
+// import { MdTranslate } from 'react-icons/md';
 
 const styles = () => ({
   langToggle: {
@@ -20,8 +20,9 @@ const Language = ({ classes }) => (
           disableRipple
           className={classes.langToggle}
           onClick={() => changeLocale(language === 'en' ? 'zh' : 'en')}
-          startIcon={<MdTranslate />}>
-          {language}
+          // startIcon={<MdTranslate />}
+        >
+          {language === 'en' ? '繁' : 'en'}
         </Button>
       );
     }}
