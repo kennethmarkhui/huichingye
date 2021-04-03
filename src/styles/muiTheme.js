@@ -8,7 +8,8 @@ import color from './color';
 const muiTheme = createMuiTheme({
   typography: {
     useNextVariants: true,
-    fontFamily: typography.fontFamily,
+    // fontFamily: typography.fontFamily,
+    fontFamily: "'Noto Sans HK', sans-serif",
   },
   palette,
   color,

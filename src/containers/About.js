@@ -48,7 +48,11 @@ const About = ({ classes, intl }) => {
       spacing={2}
       className={classes.container}>
       <Grid item md={8}>
-        <Typography variant='body1' className={classes.description} paragraph>
+        <Typography
+          variant='body1'
+          className={classes.description}
+          paragraph
+          style={{ letterSpacing: intl.locale === 'zh' ? '.2em' : 'none' }}>
           {description}
         </Typography>
       </Grid>

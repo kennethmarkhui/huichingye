@@ -41,7 +41,7 @@ const styles = ({ app, breakpoints, typography }) => ({
   },
 });
 
-require('typeface-roboto');
+require('@fontsource/noto-sans-hk/chinese-hongkong.css');
 
 const Layout = ({ classes, children, noBackground }) => (
   <Scrollbars
