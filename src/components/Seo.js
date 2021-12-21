@@ -49,6 +49,10 @@ function SEO({ lang, meta, title, description, path, image }) {
           content: metaDescription,
         },
         {
+          name: `google-site-verification`,
+          content: process.env.GOOGLE_SITE_VERIFICATION,
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
