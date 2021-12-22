@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import Image from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { withStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -29,9 +29,7 @@ const About = ({ classes, intl }) => {
     query {
       image: file(relativePath: { eq: "main.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2000) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
@@ -57,8 +55,8 @@ const About = ({ classes, intl }) => {
         </Typography>
       </Grid>
       <Grid item md={4} className={classes.imgWrapper}>
-        <Image
-          fluid={data.image.childImageSharp.fluid}
+        <GatsbyImage
+          image={data.image.childImageSharp.gatsbyImageData}
           alt='about'
           className={classes.img}
         />

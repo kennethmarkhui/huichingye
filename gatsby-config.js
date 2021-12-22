@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   plugins: [
-    `gatsby-plugin-flow`,
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
