@@ -28,6 +28,7 @@ const LinkList = ({ classes, links }) => (
         <li key={index}>
           <a
             href={to}
+            rel='noreferrer'
             target={newTab ? '_blank' : '_self'}
             className={classes.link}>
             <Icon />

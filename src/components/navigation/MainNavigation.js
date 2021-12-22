@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby-plugin-intl';
+import { Link } from 'gatsby-plugin-react-intl';
 import { withStyles } from '@material-ui/styles';
 
 const styles = ({ palette, typography }) => ({

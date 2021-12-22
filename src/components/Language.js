@@ -1,5 +1,5 @@
 import React from 'react';
-import { IntlContextConsumer, changeLocale } from 'gatsby-plugin-intl';
+import { IntlContextConsumer, changeLocale } from 'gatsby-plugin-react-intl';
 import { withStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
 // import { MdTranslate } from 'react-icons/md';

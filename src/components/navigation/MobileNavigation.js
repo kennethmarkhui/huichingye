@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby-plugin-intl';
+import { Link } from 'gatsby-plugin-react-intl';
 import { withStyles } from '@material-ui/styles';
 import { FaBars } from 'react-icons/fa';
 import Grow from '@material-ui/core/Grow';

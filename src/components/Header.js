@@ -1,5 +1,5 @@
 import React from 'react';
-import { useIntl, Link } from 'gatsby-plugin-intl';
+import { useIntl, Link } from 'gatsby-plugin-react-intl';
 import { withStyles } from '@material-ui/styles';
 
 import Animated from './animated/Animated';
