@@ -12,7 +12,7 @@ const Home = ({ intl }) => {
     links: [
       {
         to:
-          'https://drive.google.com/drive/folders/1B4ouIFUFbO90thXUCphrC50twoMb81Mi?usp=sharing',
+          'https://huichingye-gallery.vercel.app',
         text: intl.formatMessage({ id: 'pages.home.content.links' }),
         Icon: FaRegImages,
         newTab: true,
