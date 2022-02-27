@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles';
+import { HiOutlineExternalLink } from 'react-icons/hi';
 
 const styles = ({ palette, typography }) => ({
   container: {
@@ -11,6 +12,10 @@ const styles = ({ palette, typography }) => ({
   },
   linkText: {
     paddingLeft: typography.pxToRem(8),
+  },
+  newTabLinkText: {
+    paddingLeft: typography.pxToRem(8),
+    paddingRight: typography.pxToRem(8),
   },
   link: {
     border: 'none',
@@ -32,7 +37,11 @@ const LinkList = ({ classes, links }) => (
             target={newTab ? '_blank' : '_self'}
             className={classes.link}>
             <Icon />
-            <span className={classes.linkText}>{text}</span>
+            <span
+              className={newTab ? classes.newTabLinkText : classes.linkText}>
+              {text}
+            </span>
+            {newTab && <HiOutlineExternalLink />}
           </a>
         </li>
       ))}
