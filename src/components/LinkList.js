@@ -1,6 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles';
-import { HiOutlineExternalLink } from 'react-icons/hi';
+import { FiArrowUpRight } from 'react-icons/fi';
 
 const styles = ({ palette, typography }) => ({
   container: {
@@ -24,29 +24,45 @@ const styles = ({ palette, typography }) => ({
     textDecoration: 'none',
     color: palette.text.secondary,
   },
+  showIcon: {
+    display: 'block',
+  },
+  hideIcon: {
+    display: 'none',
+  },
 });
 
-const LinkList = ({ classes, links }) => (
-  <div>
-    <ul className={classes.container}>
-      {links.map(({ Icon, to, newTab, text }, index) => (
-        <li key={index}>
-          <a
-            href={to}
-            rel='noreferrer'
-            target={newTab ? '_blank' : '_self'}
-            className={classes.link}>
-            <Icon />
-            <span
-              className={newTab ? classes.newTabLinkText : classes.linkText}>
-              {text}
-            </span>
-            {newTab && <HiOutlineExternalLink />}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+const LinkList = ({ classes, links }) => {
+  const [onHover, setOnHover] = React.useState(false);
+
+  return (
+    <div>
+      <ul className={classes.container}>
+        {links.map(({ Icon, to, newTab, text }, index) => (
+          <li key={index}>
+            <a
+              href={to}
+              rel='noreferrer'
+              target={newTab ? '_blank' : '_self'}
+              className={classes.link}
+              onMouseOver={() => setOnHover(true)}
+              onMouseOut={() => setOnHover(false)}>
+              <Icon />
+              <span
+                className={newTab ? classes.newTabLinkText : classes.linkText}>
+                {text}
+              </span>
+              {newTab && (
+                <FiArrowUpRight
+                  className={onHover ? classes.showIcon : classes.hideIcon}
+                />
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default withStyles(styles)(LinkList);
